@@ -13,6 +13,7 @@ func get_ship_instruction_sequence():
 	instruction_list.append(SetDirectionInstruction.new().init([1, 1, 0]))
 	instruction_list.append(SetDirectionInstruction.new().init([3, 0, -1]))
 	instruction_list.append(ShootInstruction.new().init([2]))
+	instruction_list.append(ShootInstruction.new().init([2.5]))
 	
 	var instruction_sequence = InstructionSequence.new().init([instruction_list])
 	return instruction_sequence
