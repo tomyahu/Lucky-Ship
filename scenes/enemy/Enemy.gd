@@ -30,5 +30,16 @@ func destroy():
 # _on_bullet_entered: None -> None
 # deletes the object when a bullet hits it
 func _on_bullet_entered(area):
+	self.affect_bullet(area.get_parent())
+	
 	self._just_destroyed = true
 	$Area2D.disconnect("area_entered", self, "_on_bullet_entered")
+
+# affect_bullet: Bullet -> None
+# destroys the bullet on contact
+func affect_bullet(bullet):
+	bullet.free()
+
+# setters
+func set_position(new_position):
+	position = new_position
