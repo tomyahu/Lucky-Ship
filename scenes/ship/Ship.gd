@@ -2,6 +2,7 @@ extends Node2D
 
 var InstructionSequence = preload("res://src/instruction_sequences/InstructionSequence.gd")
 
+# TODO: Delete this line
 var LevelDebug = preload("res://src/levels/LevelDebug.gd")
 
 
@@ -13,7 +14,9 @@ var _instruction_sequence = InstructionSequence.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self._instruction_sequence.init([[]])
-	self.set_instruction_sequence(LevelDebug.new().get_ship_instruction_sequence())
+	
+	# TODO: Delete this line
+	#self.set_instruction_sequence(LevelDebug.new().get_ship_instruction_sequence())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
