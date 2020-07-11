@@ -23,3 +23,5 @@ polygon = PoolVector2Array( 0.0258484, -23.0005, 23.0194, 4.40282, 20.0817, 7.00
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "idle"
+
+[node name="Bullets" type="Node" parent="."]

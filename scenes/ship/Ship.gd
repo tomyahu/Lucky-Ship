@@ -13,10 +13,11 @@ var _instruction_sequence = InstructionSequence.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.adjust_angle()
 	self._instruction_sequence.init([[]])
 	
 	# TODO: Delete this line
-	#self.set_instruction_sequence(LevelDebug.new().get_ship_instruction_sequence())
+	self.set_instruction_sequence(LevelDebug.new().get_ship_instruction_sequence())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,12 +31,25 @@ func advance(delta):
 	var move = self.direction*self.get_speed()*delta
 	self.position += move
 
+# shoot: None -> None
+# shoots a bullet from the front of the ship
+func shoot():
+	pass
+
+# adjust_angle: None -> None
+# adjusts the angle of the ship
+func adjust_angle():
+	var angle = atan2(self.direction.y, self.direction.x)
+	self.rotation = angle
+	self.rotate(PI/2)
+
 # setters
 func set_speed(new_speed):
 	self.speed = new_speed
 
 func set_direction(x, y):
 	self.direction = Vector2(x, y).normalized()
+	self.adjust_angle()
 
 func set_instruction_sequence(new_instruction_sequence):
 	self._instruction_sequence = new_instruction_sequence
