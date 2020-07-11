@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/ship/Ship.gd" type="Script" id=1]
 [ext_resource path="res://game_assets/Ship.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ship/BulletSpawnPoint.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -25,3 +26,7 @@ frames = SubResource( 1 )
 animation = "idle"
 
 [node name="Bullets" type="Node" parent="."]
+
+[node name="BulletSpawnPoint" type="Node2D" parent="."]
+position = Vector2( 0, -26 )
+script = ExtResource( 3 )

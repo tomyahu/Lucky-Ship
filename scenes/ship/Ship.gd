@@ -1,6 +1,7 @@
 extends Node2D
 
 var InstructionSequence = preload("res://src/instruction_sequences/InstructionSequence.gd")
+var Bullet = preload("res://scenes/bullet/Bullet.tscn")
 
 # TODO: Delete this line
 var LevelDebug = preload("res://src/levels/LevelDebug.gd")
@@ -22,7 +23,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	_instruction_sequence.update(delta, self)
+	self._instruction_sequence.update(delta, self)
 
 # advance: num -> None
 # Takes the time elapsed since last frame and moves the ship in the direction
@@ -34,7 +35,10 @@ func advance(delta):
 # shoot: None -> None
 # shoots a bullet from the front of the ship
 func shoot():
-	pass
+	var new_bullet = Bullet.instance()
+	new_bullet.set_pos($BulletSpawnPoint.get_global_position())
+	new_bullet.set_direction(self.direction)
+	$Bullets.add_child(new_bullet)
 
 # adjust_angle: None -> None
 # adjusts the angle of the ship

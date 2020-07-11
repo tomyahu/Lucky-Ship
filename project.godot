@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Stellar Garbage Disposer"
+run/main_scene="res://scenes/levels/Level.tscn"
 config/icon="res://icon.png"
 
 [rendering]

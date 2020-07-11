@@ -8,13 +8,11 @@ var ShootInstruction = preload("res://src/instructions/ShootInstruction.gd")
 # gets the ship's instruction sequence for the level
 func get_ship_instruction_sequence():
 	var instruction_list = []
-	instruction_list.append(AdvanceInstruction.new().init([0,6]))
-	instruction_list.append(ShootInstruction.new().init([0.99]))
-	instruction_list.append(SetDirectionInstruction.new().init([1, 0, 1]))
-	instruction_list.append(SetDirectionInstruction.new().init([2, 1, 0]))
-	instruction_list.append(SetDirectionInstruction.new().init([3, 0, 1]))
-	instruction_list.append(SetDirectionInstruction.new().init([4, -1, 0]))
-	instruction_list.append(SetDirectionInstruction.new().init([5, 0, 1]))
+	instruction_list.append(AdvanceInstruction.new().init([0,5]))
+	instruction_list.append(SetDirectionInstruction.new().init([0, 0, -1]))
+	instruction_list.append(SetDirectionInstruction.new().init([1, 1, 0]))
+	instruction_list.append(SetDirectionInstruction.new().init([3, 0, -1]))
+	instruction_list.append(ShootInstruction.new().init([2]))
 	
 	var instruction_sequence = InstructionSequence.new().init([instruction_list])
 	return instruction_sequence
