@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/title/TitleScreen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game_assets/LastBackground.png" type="Texture" id=2]
+[ext_resource path="res://game_assets/fonts/ARCADE_N.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/title/PlayEndButton.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[node name="Node2D" instance=ExtResource( 1 )]
+
+[node name="Nombre" parent="." index="0"]
+visible = false
+
+[node name="Dibujo" parent="." index="1"]
+visible = false
+
+[node name="PlayButton" parent="Overlay" index="1"]
+script = ExtResource( 4 )
+
+[node name="ClickPlayText" parent="." index="3"]
+visible = false
+
+[node name="Fondo" type="Sprite" parent="." index="4"]
+z_index = -1
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Label" type="Label" parent="." index="5"]
+margin_left = 75.1987
+margin_top = 344.934
+margin_right = 651.199
+margin_bottom = 397.934
+custom_fonts/font = SubResource( 1 )
+text = "Thank you
+for playing <3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="." index="6"]
+margin_left = 128.854
+margin_top = 648.767
+margin_right = 584.854
+margin_bottom = 673.767
+custom_fonts/font = SubResource( 2 )
+text = "Click Play to exit!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

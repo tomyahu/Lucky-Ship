@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game_assets/Basura2_1.png" type="Texture" id=2]
+[ext_resource path="res://scenes/levels/level4/Level4.gd" type="Script" id=3]
+[ext_resource path="res://game_assets/Signal3.png" type="Texture" id=4]
+
+[node name="Level" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Ship" parent="Playground" index="2"]
+position = Vector2( 288, 608 )
+
+[node name="Sprite" parent="Overlay/AvailableEnemies/Slot2" index="0"]
+texture = ExtResource( 2 )
+
+[node name="Signals" type="Node2D" parent="." index="2"]
+
+[node name="Sprite" type="Sprite" parent="Signals" index="0"]
+position = Vector2( 236.865, 186.468 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )

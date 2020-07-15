@@ -7,8 +7,7 @@ var _direction = Vector2(0, 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -16,7 +15,7 @@ func _process(delta):
 	
 	# If bullet not on screen delete
 	if not $VisibilityNotifier2D.is_on_screen():
-		self.free()
+		self.destroy()
 
 # adjust_angle: None -> None
 # adjusts the angle the bullet is drawn
@@ -25,10 +24,20 @@ func adjust_angle():
 	self.rotation = angle
 	self.rotate(PI/2)
 
+# destroy: None -> None
+# destroys the bullet
+func destroy():
+	self.visible = false
+	self.queue_free()
+
 # setters
 func set_pos(pos):
 	self.position = pos
 
 func set_direction(new_direction):
-	self._direction = new_direction
+	self._direction = new_direction.normalized()
 	self.adjust_angle()
+
+# getters
+func get_direction():
+	return self._direction

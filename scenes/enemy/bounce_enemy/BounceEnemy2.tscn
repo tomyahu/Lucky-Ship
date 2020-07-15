@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/enemy/bounce_enemy/BounceEnemy.tscn" type="PackedScene" id=1]
+
+[node name="Enemy" instance=ExtResource( 1 )]
+scale = Vector2( -2, 2 )
+reflect_vector = Vector2( -1, -1 )

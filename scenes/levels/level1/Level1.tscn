@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game_assets/Signal1.png" type="Texture" id=2]
+[ext_resource path="res://game_assets/Signal2.png" type="Texture" id=3]
+[ext_resource path="res://scenes/levels/level1/Level1.gd" type="Script" id=4]
+[ext_resource path="res://scenes/wall/Wall.tscn" type="PackedScene" id=5]
+
+[node name="Level" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="Ship" parent="Playground" index="2"]
+position = Vector2( 160, 608 )
+
+[node name="Wall" parent="Playground/Walls" index="0" instance=ExtResource( 5 )]
+position = Vector2( 96, 608 )
+
+[node name="Wall2" parent="Playground/Walls" index="1" instance=ExtResource( 5 )]
+position = Vector2( 224, 608 )
+
+[node name="Wall3" parent="Playground/Walls" index="2" instance=ExtResource( 5 )]
+position = Vector2( 224, 288 )
+
+[node name="Wall4" parent="Playground/Walls" index="3" instance=ExtResource( 5 )]
+position = Vector2( 288, 288 )
+
+[node name="Wall5" parent="Playground/Walls" index="4" instance=ExtResource( 5 )]
+position = Vector2( 288, 352 )
+
+[node name="Wall6" parent="Playground/Walls" index="5" instance=ExtResource( 5 )]
+position = Vector2( 224, 352 )
+
+[node name="Signals" type="Node2D" parent="." index="2"]
+
+[node name="Sprite" type="Sprite" parent="Signals" index="0"]
+position = Vector2( 200.976, 237.841 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="Signals" index="1"]
+position = Vector2( 186.858, 153.305 )
+scale = Vector2( 1.30242, 1.22943 )
+texture = ExtResource( 3 )
